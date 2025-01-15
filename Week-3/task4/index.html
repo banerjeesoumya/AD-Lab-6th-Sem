@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wall</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+        }
+
+        p, ul {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        /* Lists and List Items */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        /* Input & Button Styles */
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Specific Section Styles */
+        #announcements-notifications ul,
+        #personalized-content ul,
+        #interactive-communication ul,
+        #activity-feed ul,
+        #resource-sharing ul {
+            padding-left: 20px;
+        }
+
+        #interactive-communication a {
+            font-weight: bold;
+        }
+
+        #message-board-input {
+            margin-top: 10px;
+        }
+
+        #quick-links-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        #quick-links-list li {
+            flex: 1 0 45%;
+            margin-bottom: 10px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            input[type="text"], input[type="file"], button {
+                font-size: 1em;
+            }
+
+            #quick-links-list {
+                flex-direction: column;
+            }
+
+            #quick-links-list li {
+                flex: 1 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header" name="header">
+        <h1 id="header-title" name="header-title">Welcome to My Wall</h1>
+    </header>
+
+    <section id="announcements-notifications" name="announcements-notifications">
+        <h2 id="announcements-title" name="announcements-title">Announcements and Notifications</h2>
+        <ul id="announcements-list" name="announcements-list">
+            <li id="announcement-1" name="announcement-1">Exam schedule released: December 20, 2024</li>
+            <li id="announcement-2" name="announcement-2">System maintenance: December 22, 2024 from 10 PM to 2 AM</li>
+            <li id="announcement-3" name="announcement-3">Deadline for assignment submission: December 25, 2024</li>
+        </ul>
+    </section>
+
+    <section id="personalized-content" name="personalized-content">
+        <h2 id="personalized-content-title" name="personalized-content-title">Personalized Content</h2>
+        <p id="enrolled-courses-title" name="enrolled-courses-title">Enrolled Courses: 
+            <ul id="enrolled-courses-list" name="enrolled-courses-list">
+                <li id="course-1" name="course-1">Mathematics 101</li>
+                <li id="course-2" name="course-2">Computer Science 202</li>
+                <li id="course-3" name="course-3">Physics 301</li>
+            </ul>
+        </p>
+        <p id="upcoming-exams-title" name="upcoming-exams-title">Upcoming Exams:
+            <ul id="upcoming-exams-list" name="upcoming-exams-list">
+                <li id="exam-1" name="exam-1">Mathematics: December 28, 2024</li>
+                <li id="exam-2" name="exam-2">Computer Science: January 5, 2025</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="interactive-communication" name="interactive-communication">
+        <h2 id="interactive-title" name="interactive-title">Interactive Communication</h2>
+        <p id="discussion-threads-title" name="discussion-threads-title"><strong>Discussion Threads:</strong></p>
+        <ul id="discussion-threads-list" name="discussion-threads-list">
+            <li id="thread-1" name="thread-1"><a href="#">Thread 1: Study Tips for Mathematics</a></li>
+            <li id="thread-2" name="thread-2"><a href="#">Thread 2: Computer Science Exam Preparation</a></li>
+            <li id="thread-3" name="thread-3"><a href="#">Thread 3: Physics Review Session</a></li>
+        </ul>
+        <p id="message-board-title" name="message-board-title"><strong>Message Board:</strong></p>
+        <p id="message-board-input" name="message-board-input">Post a new message: 
+            <input id="message-input" name="message-input" type="text" placeholder="Write a message..."> 
+            <button id="post-button" name="post-button">Post</button>
+        </p>
+    </section>
+
+    <section id="quick-links" name="quick-links">
+        <h2 id="quick-links-title" name="quick-links-title">Quick Links</h2>
+        <ul id="quick-links-list" name="quick-links-list">
+            <li id="quick-link-1" name="quick-link-1"><a href="#">Exams</a></li>
+            <li id="quick-link-2" name="quick-link-2"><a href="#">Results</a></li>
+            <li id="quick-link-3" name="quick-link-3"><a href="#">Study Materials</a></li>
+            <li id="quick-link-4" name="quick-link-4"><a href="#">FAQs</a></li>
+        </ul>
+    </section>
+
+    <section id="activity-feed" name="activity-feed">
+        <h2 id="activity-feed-title" name="activity-feed-title">Activity Feed</h2>
+        <ul id="activity-feed-list" name="activity-feed-list">
+            <li id="activity-1" name="activity-1">Assignment for Mathematics 101 submitted on December 15, 2024</li>
+            <li id="activity-2" name="activity-2">New course announcement for Computer Science 202 on December 16, 2024</li>
+            <li id="activity-3" name="activity-3">Discussion post on Physics 301 added by John Doe on December 17, 2024</li>
+        </ul>
+    </section>
+
+    <section id="resource-sharing" name="resource-sharing">
+        <h2 id="resource-sharing-title" name="resource-sharing-title">Resource Sharing</h2>
+        <p id="resource-sharing-description" name="resource-sharing-description">Share your resources here:</p>
+        <form id="resource-sharing-form" name="resource-sharing-form" action="#" method="post">
+            <label id="file-upload-label" name="file-upload-label" for="file-upload">Upload a file:</label>
+            <input id="file-upload" name="file-upload" type="file">
+            <button id="share-button" name="share-button" type="submit">Share File</button>
+        </form>
+        <ul id="resource-list" name="resource-list">
+            <li id="resource-1" name="resource-1"><a href="#">Study notes for Mathematics 101</a></li>
+            <li id="resource-2" name="resource-2"><a href="#">Physics 301 reference materials</a></li>
+        </ul>
+    </section>
+
+</body>
+</html>
