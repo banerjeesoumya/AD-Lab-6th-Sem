@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+  <h1>Employee Information</h1>
+  
+  <div class="input-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter employee's name">
+  </div>
+  
+  <div class="input-group">
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" placeholder="Enter employee ID">
+  </div>
+  
+  <div class="input-group">
+    <label>Gender:</label>
+    <input type="radio" name="gender" id="male" value="Male"> <label for="male">Male</label>
+    <input type="radio" name="gender" id="female" value="Female"> <label for="female">Female</label>
+  </div>
+  
+  <div class="input-group">
+    <label for="department">Department:</label>
+    <select id="department">
+      <option value="HR">HR</option>
+      <option value="IT">IT</option>
+      <option value="Finance">Finance</option>
+      <option value="Sales">Sales</option>
+    </select>
+  </div>
+  
+  <div class="input-group">
+    <label for="basicSalary">Basic Salary:</label>
+    <input type="number" id="basicSalary" placeholder="Enter basic salary">
+  </div>
+  
+  <div class="input-group">
+    <label for="hra">HRA:</label>
+    <input type="number" id="hra" placeholder="Enter HRA">
+  </div>
+  
+  <div class="input-group">
+    <label for="allowances">Allowances:</label>
+    <input type="number" id="allowances" placeholder="Enter allowances">
+  </div>
+  
+  <button onclick="showDetails()">Show Details</button>
+  <button onclick="showGrossSalary()">Show Gross Salary</button>
+  <button onclick="showIncomeCategory()">Show Income Category</button>
+  <p id="details"></p>
+  <p id="grossSalary"></p>
+  <p id="incomeCategory"></p>
+  
+  <script>
+    function showDetails() {
+      const name = document.getElementById("name").value;
+      const employeeId = document.getElementById("employeeId").value;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value || "Not specified";
+      const department = document.getElementById("department").value;
+
+      document.getElementById("details").innerText = `Name: ${name}\nEmployee ID: ${employeeId}\nGender: ${gender}\nDepartment: ${department}`;
+    }
+
+    function showGrossSalary() {
+      const basicSalary = parseFloat(document.getElementById("basicSalary").value) || 0;
+      const hra = parseFloat(document.getElementById("hra").value) || 0;
+      const allowances = parseFloat(document.getElementById("allowances").value) || 0;
+
+      const grossSalary = basicSalary + hra + allowances;
+      document.getElementById("grossSalary").innerText = `Gross Salary: ${grossSalary.toFixed(2)}`;
+    }
+
+    function showIncomeCategory() {
+      const basicSalary = parseFloat(document.getElementById("basicSalary").value) || 0;
+      const hra = parseFloat(document.getElementById("hra").value) || 0;
+      const allowances = parseFloat(document.getElementById("allowances").value) || 0;
+
+      const grossSalary = basicSalary + hra + allowances;
+      let category = "";
+
+      switch (true) {
+        case grossSalary > 300000:
+          category = "High Income Group";
+          break;
+        case grossSalary >= 100000:
+          category = "Medium Income Group";
+          break;
+        default:
+          category = "Low Income Group";
+      }
+
+      document.getElementById("incomeCategory").innerText = `Income Category: ${category}`;
+    }
+  </script>
+</body>
+</html>
