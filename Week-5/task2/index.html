@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Names</title>
+</head>
+<body>
+    <h1>Names List</h1>
+    <p>Type a name below and click the button to add it to the list:</p>
+    <input type="text" id="nameInput" placeholder="Enter a name">
+    <button onclick="addName()">Add Name</button>
+    <p id="nameList"></p>
+    <script>
+        const names = [];
+
+        function addName() {
+            const name = document.getElementById('nameInput').value;
+            const nameListElement = document.getElementById('nameList');
+            if (name) {
+                names.push(name);
+                nameListElement.textContent = `Names: ${names.join(', ')}`;
+                document.getElementById('nameInput').value = '';
+            } else {
+                nameListElement.textContent = 'Please enter a name to add to the list.';
+            }
+        }
+    </script>
+</body>
+</html>
