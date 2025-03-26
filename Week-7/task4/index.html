@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Number Validator</title>
+</head>
+<body>
+    <div>
+        <h2>Name - Soumya Banerjee</h2> 
+        <h3>Roll - 22051896</h3>
+        <h4>Section - CSE-20</h4>
+    </div>
+    <h1>Phone Number Validator</h1>
+    <input type="text" id="phoneNumber" placeholder="xxx-xxx-xxxx">
+    <button onclick="validatePhoneNumber()">Validate</button>
+    <p id="result"></p>
+    <script>
+        function validatePhoneNumber() {
+            var phoneNumber = document.getElementById("phoneNumber").value;
+            var pattern = /^\d{3}-\d{3}-\d{4}$/;
+            if (pattern.test(phoneNumber)) {
+                document.getElementById("result").innerText = "Valid Phone Number";
+            } else {
+                document.getElementById("result").innerText = "Invalid Phone Number";
+            }
+        }
+    </script>
+</body>
+</html>

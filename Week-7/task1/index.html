@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Check</title>
+</head>
+<body>
+    <div>
+        <h2>Name - Soumya Banerjee</h2> 
+        <h3>Roll - 22051896</h3>
+        <h4>Section - CSE-20</h4>
+    </div>
+    <div>
+        <h1>Email Validator</h1>
+        <div>Enter Email Address</div>
+        <br>
+        <input id="arrayDisplay" type="text" placeholder="Enter email address">
+        <button onclick="validateEmail()">Validate Email</button>
+        <p id="displayResult"></p>
+    </div>
+    <script>
+        let regexRange = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        function validateEmail() {
+            const value = document.getElementById('arrayDisplay').value;
+            if (regexRange.test(value) && value.endsWith('.com') || value.endsWith('.ac.in')) {
+                document.getElementById('displayResult').innerText = 'Email is valid';
+            } else {
+                document.getElementById('displayResult').innerText = 'Email is invalid';
+            }
+        }
+    </script>
+</body>
+</html>

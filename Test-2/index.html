@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Operations</title>
+</head>
+<body>
+    <h1>Test 2</h1>
+    <div>
+    <h2>Roll : Soumya Banerjee</h2> 
+    <h3>Roll : 22051896</h3>
+    <h4>Section : CSE-20</h4>
+    </div>
+    <div>
+        <p>Enter Element</p>
+        <input id="el" type="text" placeholder="Enter value">
+        <button onclick="add()">Add Element</button>
+    </div>
+    <br><br>
+    <div>
+        <p>Search Element</p>
+        <input id="searchInput" type="text" placeholder="Enter value to search">
+        <button onclick="search()">Search Element</button>
+    </div>
+    
+    <br><br>
+    <button onclick="sortArray(true)">Sort Ascending</button>
+    <button onclick="sortArray(false)">Sort Descending</button>
+    <p id="sortDis"></p>
+    <p id="searchRes"></p>
+    <script>
+        let arr = [];
+        function add() {
+            const val = parseInt(document.getElementById('el').value);
+            if (!isNaN(val)) {
+                arr.push(val);
+                document.getElementById('sortDis').innerText =` Array: [${arr.join(', ')}]`;
+            }
+        }
+        function search() {
+            const val = parseInt(document.getElementById('searchInput').value);
+            const index = arr.indexOf(val);
+            if (index !== -1) {
+                document.getElementById('searchRes').innerText = `Element found at index ${index}.`;
+            } else {
+                document.getElementById('searchRes').innerText = 'Element not found.';
+            }
+        }
+        function sortArray(ascending) {
+            arr.sort((a, b) => ascending ? a - b : b - a);
+            document.getElementById('sortDis').innerText = `Array: [${arr.join(', ')}]`;
+        }
+    </script>
+</body>
+</html>

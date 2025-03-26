@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Replace Vowels with Asterisks</title>
+</head>
+<body>
+    <div>
+        <h2>Name - Soumya Banerjee</h2> 
+        <h3>Roll - 22051896</h3>
+        <h4>Section - CSE-20</h4>
+    </div>
+    <div>
+        <h2>Replace Vowels with Asterisks</h2>
+        <textarea id="userInput" rows="4" cols="50" placeholder="Enter your string here"></textarea>
+    </div>
+    <br>
+    <button onclick="replaceVowels()">Replace Vowels</button>
+    <p id="modifiedString"></p>
+
+    <script>
+        function replaceVowels() {
+            const input = document.getElementById('userInput').value;
+            const modified = input.replace(/[aeiouAEIOU]/g, '*');
+            document.getElementById('modifiedString').innerText = modified;
+        }
+    </script>
+</body>
+</html>

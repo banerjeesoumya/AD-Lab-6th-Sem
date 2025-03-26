@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <h1>Array Operations</h1>
+    <input type="text" id="arrayInput" placeholder="Enter a value" />
+    <button onclick="pushValue()">Push</button>
+    <button onclick="popValue()">Pop</button>
+    <button onclick="shiftValue()">Shift</button>
+    <button onclick="unshiftValue()">Unshift</button>
+    <p id="arrayDisplay">Array: []</p>
+
+    <script>
+        const arr = [];
+
+        function updateDisplay() {
+            document.getElementById('arrayDisplay').textContent = `Array: [${arr.join(', ')}]`;
+        }
+
+        function pushValue() {
+            const value = document.getElementById('arrayInput').value.trim();
+            if (value) {
+                arr.push(value);
+                updateDisplay();
+            } else {
+                alert('Please enter a value.');
+            }
+            document.getElementById('arrayInput').value = '';
+        }
+
+        function popValue() {
+            if (arr.length > 0) {
+                arr.pop();
+                updateDisplay();
+            } else {
+                alert('Array is empty.');
+            }
+        }
+
+        function shiftValue() {
+            if (arr.length > 0) {
+                arr.shift();
+                updateDisplay();
+            } else {
+                alert('Array is empty.');
+            }
+        }
+
+        function unshiftValue() {
+            const value = document.getElementById('arrayInput').value.trim();
+            if (value) {
+                arr.unshift(value);
+                updateDisplay();
+            } else {
+                alert('Please enter a value.');
+            }
+            document.getElementById('arrayInput').value = '';
+        }
+    </script>
+</body>
+</html>

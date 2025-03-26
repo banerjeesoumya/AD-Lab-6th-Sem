@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+</head>
+<body>
+    <div>
+        <h2>Name - Soumya Banerjee</h2> 
+        <h3>Roll - 22051896</h3>
+        <h4>Section - CSE-20</h4>
+    </div>
+    <h1>Password Strength Checker</h1>
+    <input type="password" id="password" placeholder="Enter your password">
+    <button onclick="checkPasswordStrength()">Check Password</button>
+    <p id="result"></p>
+    <script>
+        function checkPasswordStrength() {
+            var password = document.getElementById("password").value;
+            var pattern = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+            if (pattern.test(password)) {
+                document.getElementById("result").innerText = "Strong Password";
+            } else {
+                document.getElementById("result").innerText = "Weak Password";
+            }
+        }
+    </script>
+</body>
+</html>

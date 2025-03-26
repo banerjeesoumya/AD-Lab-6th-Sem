@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Search</title>
+</head>
+<body>
+    <div>
+        <h2>Name - Soumya Banerjee</h2> 
+        <h3>Roll - 22051896</h3>
+        <h4>Section - CSE-20</h4>
+    </div>
+    <h1>Word Search</h1>
+    <input type="text" id="inputString" placeholder="Enter the main string">
+    <input type="text" id="searchWord" placeholder="Enter the word/phrase to search">
+    <button onclick="searchWord()">Search</button>
+    <p id="result"></p>
+    <script>
+        function searchWord() {
+            var inputString = document.getElementById("inputString").value;
+            var searchWord = document.getElementById("searchWord").value;
+            var pattern = new RegExp(searchWord, 'i');
+            if (pattern.test(inputString)) {
+                document.getElementById("result").innerText = "Word Found";
+            } else {
+                document.getElementById("result").innerText = "Word Not Found";
+            }
+        }
+    </script>
+</body>
+</html>

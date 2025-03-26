@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Area and Search Box</title>
+</head>
+<body>
+    <div>
+        <h2>Name: Soumya Banerjee</h2> 
+        <h3>Roll: 22058196</h3>
+        <h4>Section: CSE - 20</h4>
+    </div>
+    <div>
+        <h2>Message Replacer</h2>
+        <textarea id="messageInput" rows="4" cols="50" placeholder="Enter your message here"></textarea>
+    </div>
+    <br>
+    <div>
+        <input id="searchWord" type="text" placeholder="Enter word to search">
+    </div>
+    <br>
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="replaceWord()">Replace Word</button>
+    <p id="displayMessage"></p>
+    <script>
+        function showMessage() {
+            const message = document.getElementById('messageInput').value;
+            document.getElementById('displayMessage').innerText = message;
+        }
+
+        function replaceWord() {
+            const message = document.getElementById('messageInput').value;
+            const searchWord = document.getElementById('searchWord').value;
+            const replaceWord = prompt('Enter the word to replace "' + searchWord + '" with:');
+            if (replaceWord !== null) {
+                const regex = new RegExp(searchWord, 'g');
+                const modifiedMessage = message.replace(regex, replaceWord);
+                document.getElementById('displayMessage').innerText = modifiedMessage;
+            }
+        }
+    </script>
+</body>
+</html>
